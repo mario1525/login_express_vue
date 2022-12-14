@@ -22,6 +22,7 @@ app.use(morgan('tiny'));
 //ruta
 app.get('/', (req,res,next)=>{
     res.json({
+        name: 'mario',
         message: 'hello world!'
     });
 });

@@ -1,43 +1,34 @@
-<script setup>
-defineProps({
-  msg: {
-    type: String,
-    required: true,
-  },
-});
-</script>
-
 <template>
-  <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
-    </h3>
+  <div class="media-body">
+      <h4 class="mt-0 mb-1">{{ message.name }}</h4>
+      <h5 class="mt-0 mb-1">{{ message.message }}</h5>
   </div>
 </template>
+ 
+<script>
+const API_URL = "http://localhost:3000/";
 
-<style scoped>
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  top: -10px;
-}
+export default {
+  name: "home",
+  data: () => ({
+      error: "",
+      messages: []
+  }),
 
-h3 {
-  font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
-  text-align: center;
-}
-
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
+  mounted() {
+      fetch(API_URL)
+          .then(response => response.json())
+          .then(result => {
+              this.messages = result;
+          });
+  },
+  methods: {}
+};
+</script>
+ 
+<style>
+img {
+  max-width: 300px;
+  height: auto;
 }
 </style>
