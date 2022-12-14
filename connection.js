@@ -3,7 +3,7 @@ const { Client } = require('pg');
 //configuracion de la base de datos 
 const connectionData = {
     user: 'postgres',
-    host: '',
+    host: '127.0.0.1',
     database: 'menssage',
     password: 'mario143',
     port: 5432,
