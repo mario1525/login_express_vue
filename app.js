@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 const path = require('path');
 const history = require('connect-history-api-fallback');
+const route = require('./router/index');
 
 const app = express();
 
@@ -20,12 +21,7 @@ app.use(cors());
 app.use(morgan('tiny'));
 
 //ruta
-app.get('/', (req,res,next)=>{
-    res.json({
-        name: 'mario',
-        message: 'hello world!'
-    });
-});
+
 
 // Middleware para Vue.js router modo history
 app.use(history());
