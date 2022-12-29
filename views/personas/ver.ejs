@@ -1,28 +1,28 @@
 <%- include("../header"); %>
 <div class="col-12">
     <h1>Productos</h1>
-    <a href="/productos/agregar" class="btn btn-primary mb-2">Agregar</a>
+    <a href="/personas/agregar" class="btn btn-primary mb-2">Agregar</a>
     <table class="table table-bordered">
         <thead>
             <tr>
                 <th>Nombre</th>
-                <th>Precio</th>
+                <th>Apellido</th>
                 <th>Editar</th>
                 <th>Eliminar</th>
             </tr>
         </thead>
         <tbody>
-            <% productos.forEach(producto => { %>
+            <% personas.forEach(persona => { %>
             <tr>
-                <td><%= producto.nombre %></td>
-                <td><%= producto.precio %></td>
+                <td><%= persona.nombre %></td>
+                <td><%= persona.apellido %></td>
                 <td>
-                    <a href="/productos/editar/<%= producto.id %>" class="btn btn-warning">
+                    <a href="/personas/editar/<%= personas.id %>" class="btn btn-warning">
                         Editar
                     </a>
                 </td>
                 <td>
-                    <a href="/productos/eliminar/<%= producto.id %>" class="btn btn-danger">
+                    <a href="/personas/eliminar/<%= personas.id %>" class="btn btn-danger">
                         Eliminar
                     </a>
                 </td>

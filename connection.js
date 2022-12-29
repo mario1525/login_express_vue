@@ -1,22 +1,18 @@
-const { Client } = require('pg');
+const mysql = require('mysql');
 
 //configuracion de la base de datos 
-const connectionData = {
-    user: 'postgres',
-    host: '127.0.0.1',
-    database: 'menssage',
-    password: 'mario143',
-    port: 5432,
-  }
-const client = new Client(connectionData)
-
-client.connect();
-
-client.query('SELECT * FROM personas')
-    .then(response => {
-        console.log(response.rows)
-        client.end()
-    })
-    .catch(err => {
-        client.end()
-    })
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'personas',
+    port: 3306
+ });
+ connection.connect(function(error){
+    if(error){
+       throw error;
+    }else{
+       console.log('Conexion correcta.');
+    }
+ });
+ connection.end();

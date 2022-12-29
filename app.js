@@ -21,7 +21,7 @@ app.use(cors());
 app.use(morgan('tiny'));
 
 //ruta
-
+app.use("/",route)
 
 // Middleware para Vue.js router modo history
 app.use(history());

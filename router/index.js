@@ -18,11 +18,11 @@ router.get('/', (req, res , next)=>{
     });
 });
 
-router.get('/agregar', function (req, res, next) {
+router.get('/agregar', (req, res, next) => {
     res.render("personas/agregar");
 });
 
-router.post('/insertar', function (req, res, next) {
+router.post('/insertar',(req, res, next)=> {
     // Obtener el nombre y precio. Es lo mismo que
     // const nombre = req.body.nombre;
     // const precio = req.body.precio;

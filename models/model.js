@@ -1,16 +1,16 @@
 const conexion = require('../connection');
 
 module.exports = {
-    async insertar( nombre, apellido){
+    async insertar( Nombre, Apellido){
         let resultados = await conexion.query(`insert into personas
-        (nombre, apellido)
+        (Nombre, Apellido)
         values
-        ($1, $2)`, [nombre, apellido]);
+        ($1, $2)`, [Nombre, Apellido]);
         return resultados;
     },
 
     async obtener() {
-        const resultados = await conexion.query('select * from personas');
+        let resultados = await conexion.query('select * from personas');
         return resultados.rows;
     },
 
